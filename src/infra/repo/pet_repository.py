@@ -1,15 +1,14 @@
 from typing import List
-
+from src.data.interfaces import PetRepositoryInterface
 from src.domain.models import Pets
 from src.infra.config import DBConnectionHandler
 from src.infra.entities import Pets as PetsModel
 
 
-class PetRepository:
+class PetRepository(PetRepositoryInterface):
     """Class to manage Pet Repository"""
 
-    @classmethod
-    def insert_pet(cls, name: str, specie: str, age: int, user_id: int) -> Pets:
+    def insert_pet(self, name: str, specie: str, age: int, user_id: int) -> Pets:
         """
         Insert data in PetsEntity entity
         :param - name: name of the pet
@@ -39,8 +38,7 @@ class PetRepository:
             finally:
                 db_connection.session.close()
 
-    @classmethod
-    def select_pet(cls, pet_id: int = None, user_id: int = None) -> List[Pets]:
+    def select_pet(self, pet_id: int = None, user_id: int = None) -> List[Pets]:
         """Select data in pets entity by id and/or user_id
         :param - pet_id: ID of the pet registry
                - user_id: ID of the owner

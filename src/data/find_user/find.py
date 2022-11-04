@@ -10,7 +10,7 @@ class FindUser(FindUserInterface):
     def __init__(self, user_repository: Type[UserRepository]):
         self.user_repository = user_repository
 
-    def by_id(self, user_id: str) -> Dict[bool, List[Users]]:
+    def by_id(self, user_id: int) -> Dict[bool, List[Users]]:
         """Select User by id
         :param - user_id: id of the user
         :return - Dictionary with informations of the process

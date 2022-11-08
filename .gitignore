@@ -3,3 +3,4 @@ venv/
 .vscode
 *.db
 .pytest_cache/
+.idea/

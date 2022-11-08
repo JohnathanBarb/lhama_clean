@@ -27,7 +27,7 @@ class FindUserSpy:
     def by_name(self, name: str) -> Dict[bool, List[Users]]:
         """Select User by name"""
 
-        self.by_id_param["name"] = name
+        self.by_name_param["name"] = name
         response = None
         validate_entry = isinstance(name, str)
 

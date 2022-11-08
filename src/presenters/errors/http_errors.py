@@ -5,10 +5,10 @@ class HttpErrors:
     def error_422():
         """HTTP 422"""
 
-        return {"status_code": 422, "error": "Unprocessable Entity"}
+        return {"status_code": 422, "body": "Unprocessable Entity"}
 
     @staticmethod
     def error_400():
         """HTTP 400"""
 
-        return {"status_code": 400, "error": "Bad Request"}
+        return {"status_code": 400, "body": "Bad Request"}

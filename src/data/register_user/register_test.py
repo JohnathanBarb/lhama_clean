@@ -14,7 +14,7 @@ def test_register():
 
     attributes = {"name": faker.name(), "password": faker.name()}
 
-    response = register_user.register(
+    response = register_user.registry(
         name=attributes["name"], password=attributes["password"]
     )
 
@@ -33,7 +33,7 @@ def test_fail_register():
 
     attributes = {"name": faker.random_number(), "password": faker.name()}
 
-    response = register_user.register(
+    response = register_user.registry(
         name=attributes["name"], password=attributes["password"]
     )
 

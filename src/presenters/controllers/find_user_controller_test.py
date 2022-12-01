@@ -45,7 +45,7 @@ def test_handle_query_user_id():
     assert find_user_use_case.by_id_param["user_id"] == http_request.query["user_id"]
 
     assert response.status_code == 200
-    assert response.body
+    assert "error" not in response.body
 
 
 def test_handle_query_user_name():
@@ -61,7 +61,7 @@ def test_handle_query_user_name():
     assert find_user_use_case.by_name_param["name"] == http_request.query["user_name"]
 
     assert response.status_code == 200
-    assert response.body
+    assert "error" not in response.body
 
 
 def test_handle_no_query_param():
